@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{k}{def} \PYG{n+nf}{simulator}\PYG{p}{(}\PYG{n}{MB\PYGZus{}start}\PYG{p}{,} \PYG{n}{OB\PYGZus{}start}\PYG{p}{,} \PYG{n}{MB\PYGZus{}end}\PYG{p}{,} \PYG{n}{OB\PYGZus{}end}\PYG{p}{,} \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n}{dt} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{):}
+    \PYG{n}{K} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{T}\PYG{o}{/}\PYG{n}{dt} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{}Steps}
+    \PYG{n}{MB\PYGZus{}pos} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{K}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{))}  \PYG{c+c1}{\PYGZsh{}MB = Main Boat}
+    \PYG{n}{OB\PYGZus{}pos} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{((}\PYG{n}{K}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{))}  \PYG{c+c1}{\PYGZsh{}OB = Other Boat}
+    \PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{K}\PYG{p}{)}           \PYG{c+c1}{\PYGZsh{}Time}
+
+    \PYG{c+c1}{\PYGZsh{}Initial position}
+    \PYG{n}{MB\PYGZus{}pos}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{MB\PYGZus{}start}
+    \PYG{n}{OB\PYGZus{}pos}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{OB\PYGZus{}start}
+
+    \PYG{c+c1}{\PYGZsh{}Calculate constant velocity}
+    \PYG{n}{MB\PYGZus{}vel} \PYG{o}{=} \PYG{p}{(}\PYG{n}{MB\PYGZus{}end} \PYG{o}{\PYGZhy{}} \PYG{n}{MB\PYGZus{}pos}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}\PYG{o}{/}\PYG{n}{T}
+    \PYG{n}{OB\PYGZus{}vel} \PYG{o}{=} \PYG{p}{(}\PYG{n}{OB\PYGZus{}end} \PYG{o}{\PYGZhy{}} \PYG{n}{OB\PYGZus{}pos}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}\PYG{o}{/}\PYG{n}{T}
+
+    \PYG{c+c1}{\PYGZsh{}Main update loop}
+    \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{K} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{):}
+        \PYG{n}{MB\PYGZus{}pos}\PYG{p}{[}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{MB\PYGZus{}pos}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{+} \PYG{n}{MB\PYGZus{}vel}\PYG{o}{*}\PYG{n}{dt}
+        \PYG{n}{OB\PYGZus{}pos}\PYG{p}{[}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{OB\PYGZus{}pos}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{+} \PYG{n}{OB\PYGZus{}vel}\PYG{o}{*}\PYG{n}{dt}
+        \PYG{n}{t}\PYG{p}{[}\PYG{n}{k}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{t}\PYG{p}{[}\PYG{n}{k}\PYG{p}{]} \PYG{o}{+} \PYG{n}{dt}
+    \PYG{k}{return} \PYG{n}{MB\PYGZus{}pos}\PYG{p}{,} \PYG{n}{OB\PYGZus{}pos}
+\end{Verbatim}

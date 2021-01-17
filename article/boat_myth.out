@@ -1,19 +1,18 @@
-\BOOKMARK [0][-]{section*.2}{En videnskablig analyse af den maritime tommelfingerregel for vurderingen af potentielle kollisioner ved betragtning af omgivelsernes relative bev\346gelse til det eventuelle kollisionsfart\370j}{}% 2
+\BOOKMARK [0][-]{section*.2}{En videnskablig analyse af den maritime tommelfingerregel for vurderingen af kollisionskurs ved betragtning af omgivelsernes relative bev\346gelse til et andet fart\370j}{}% 2
 \BOOKMARK [1][-]{section*.1}{Abstract}{section*.2}% 1
 \BOOKMARK [1][-]{section*.3}{Introduktion}{section*.2}% 3
-\BOOKMARK [1][-]{section*.4}{Metode}{section*.2}% 4
-\BOOKMARK [2][-]{section*.5}{Definering af problemet}{section*.4}% 5
-\BOOKMARK [1][-]{section*.6}{Resultater}{section*.2}% 6
-\BOOKMARK [2][-]{section*.7}{Pejlingens betydning for kollisionskurs}{section*.6}% 7
-\BOOKMARK [3][-]{section*.8}{Gengivelse af konstant-pejling-udledningen uden matematisk notation}{section*.7}% 8
-\BOOKMARK [2][-]{section*.9}{Gr\346nsebetingelser for brug af kystens relative bev\346gelse som indikator}{section*.6}% 9
-\BOOKMARK [3][-]{section*.10}{Definering af kendelig forflyting}{section*.9}% 10
-\BOOKMARK [3][-]{section*.11}{Hvis at kystvinkel er irrelevant}{section*.9}% 11
-\BOOKMARK [2][-]{section*.12}{Resultat for gr\346nse}{section*.6}% 12
-\BOOKMARK [3][-]{section*.13}{Modbevis af baggrundsmetoden}{section*.12}% 13
-\BOOKMARK [3][-]{section*.14}{Sammenfald mellem baggrundsmetode og lokalt pejlem\346rke}{section*.12}% 14
-\BOOKMARK [1][-]{section*.15}{Diskussion}{section*.2}% 15
-\BOOKMARK [1][-]{section*.16}{Konklusion}{section*.2}% 16
-\BOOKMARK [1][-]{section*.17}{References}{section*.2}% 17
-\BOOKMARK [1][-]{section*.18}{Appendix}{section*.2}% 18
-\BOOKMARK [2][-]{section*.19}{Plots for simuleringer der bekr\346fter det matematiske teorem}{section*.18}% 19
+\BOOKMARK [2][-]{section*.4}{M\345lgruppe og brug af matematisk notation}{section*.3}% 4
+\BOOKMARK [1][-]{section*.5}{Metode}{section*.2}% 5
+\BOOKMARK [2][-]{section*.6}{Definering af problemet}{section*.5}% 6
+\BOOKMARK [2][-]{section*.7}{Numeriske simuleringer som st\370tte til matematiske resultater}{section*.5}% 7
+\BOOKMARK [1][-]{section*.8}{Resultater}{section*.2}% 8
+\BOOKMARK [2][-]{section*.9}{Pejlingens betydning for kollisionskurs \(matematisk udledning\)}{section*.8}% 9
+\BOOKMARK [3][-]{section*.10}{Gengivelse af konstant-pejling-udledningen uden matematisk notation}{section*.9}% 10
+\BOOKMARK [2][-]{section*.11}{Gr\346nsebetingelser for brug af baggrundsmetoden}{section*.8}% 11
+\BOOKMARK [3][-]{section*.12}{Definering af kendelig forflyting}{section*.11}% 12
+\BOOKMARK [1][-]{section*.13}{Diskussion}{section*.2}% 13
+\BOOKMARK [1][-]{section*.14}{Konklusion}{section*.2}% 14
+\BOOKMARK [1][-]{section*.15}{References}{section*.2}% 15
+\BOOKMARK [1][-]{section*.16}{Appendix}{section*.2}% 16
+\BOOKMARK [2][-]{section*.17}{Kollisions simmuleringer}{section*.16}% 17
+\BOOKMARK [2][-]{section*.18}{Ikke-kollisions simmuleringer}{section*.16}% 18
