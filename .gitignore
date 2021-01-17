@@ -4,12 +4,16 @@
 
 #Latex
 *.aux
+*.bbl
+*.blg
 *.fdb_latexmk
 *.fls
 *.log
 *.gz
 *.out
 *.toc
+*.thm
+*.bib
 
 #Text files including run data
 *.txt
