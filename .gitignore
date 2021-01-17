@@ -21,5 +21,7 @@
 #Big arrays
 *.npy
 
+
 #Folders
 __pycache__/
+_minted-boat_myth
