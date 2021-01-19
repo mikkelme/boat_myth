@@ -150,7 +150,7 @@ def plotter(MB_pos, OB_pos, coast_center, coast_angle, subplot = False):
         ymax = np.max(np.array([ 0, np.max(MB_pos[idx,1]), np.max(OB_pos[idx,1]), np.max(intercepts[:,1])])) + 10
 
         ymin = np.max(np.array([ylow, ymin]))
-        ymmax = np.min(np.array([yhigh, ymin]))
+        ymax = np.min(np.array([yhigh, ymax]))
     plt.ylim(ymin, ymax)
     plt.xlim(xmin, xmax)
 
