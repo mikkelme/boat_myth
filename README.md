@@ -9,6 +9,6 @@ Kan tage lidt tid at loade.
 Beskrivelse: Simpel kollision
 
 kk
-kk
+...kk
 
 ![](article/figures/aniC1.gif)
