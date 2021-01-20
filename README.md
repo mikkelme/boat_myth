@@ -9,7 +9,7 @@ Kan tage lidt tid at loade.
 **Beskrivelse**: Simpel kollision
 
 |         | Start         | Slut   |
-| -------:|:-------------:| :-----:|
+|:-------:|:-------------:| :-----:|
 | **HB**  | (0,0)         | (0,40) |
 | **KB**  | (40,40)       | (0,40) |
 
