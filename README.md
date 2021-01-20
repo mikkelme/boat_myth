@@ -7,10 +7,12 @@ Kan tage lidt tid at loade.
 
 ## Animation 1
 Beskrivelse: Simpel kollision
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+
+| HB        | KB  |
+| ------------- |:-------------:| 
+| col 3 is      | right-aligned |
+| col 2 is      | centered      | 
+| zebra stripes | are neat      | 
 
 
 ![](article/figures/aniC1.gif)
