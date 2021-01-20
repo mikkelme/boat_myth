@@ -14,5 +14,10 @@ Beskrivelse: Simpel kollision
 | col 2 is      | centered      | 
 | zebra stripes | are neat      | 
 
+| 1  | 1  | 1  |  1 | 1  |
+|---|---|---|---|---|
+|  1 |   1|1   |  1 | 1  |
+| 11  |   1|  11 |  1 | 1  |
+
 
 ![](article/figures/aniC1.gif)
