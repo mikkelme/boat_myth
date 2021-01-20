@@ -4,4 +4,4 @@
 
 Animations test 
 
-![](aniC1.gif)
+![](article/figures/aniC1.gif)
