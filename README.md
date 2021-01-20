@@ -6,12 +6,12 @@
 Kan tage lidt tid at loade.
 
 ## Animation 1
-Beskrivelse: Simpel kollision
+**Beskrivelse**: Simpel kollision
 
-|        | Start         | Slut  |
-| ------------- |:-------------:| :-----:|
-| **HB**     | (0,0) | (0,0) |
-| **KB**   | (0,0)      |   (0,0) |
+|         | Start         | Slut   |
+| -------:|:-------------:| :-----:|
+| **HB**  | (0,0)         | (0,40) |
+| **KB**  | (40,40)       | (0,40) |
 
 
 
