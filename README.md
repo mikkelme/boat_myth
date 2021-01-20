@@ -8,16 +8,12 @@ Kan tage lidt tid at loade.
 ## Animation 1
 Beskrivelse: Simpel kollision
 
-| HB        | KB  |
-| ------------- |:-------------:| 
-| col 3 is      | right-aligned |
-| col 2 is      | centered      | 
-| zebra stripes | are neat      | 
+| 3 | HB          | KB  |
+| 3| ------------- |:-------------:| 
+| 3| col 3 is      | right-aligned |
+| 3| col 2 is      | centered      | 
+| 3| zebra stripes | are neat      | 
 
-| 1  | 1  | 1  |  1 | 1  |
-|---|---|---|---|---|
-|  1 |   1|1   |  1 | 1  |
-| 11  |   1|  11 |  1 | 1  |
 
 
 ![](article/figures/aniC1.gif)
