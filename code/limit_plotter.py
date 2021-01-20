@@ -78,7 +78,7 @@ def s(theta, beta, v, omega_k):
 beta = np.linspace(0, 90, 5)
 for i in range(len(beta)):
     plt.plot(theta/(2*np.pi)*360, s(theta, beta[i]/360*2*np.pi, v, omega_k), alpha = 0.3,  label = r"$\beta = $%g$^{\circ}$" %(beta[i]))
-plt.plot(theta/(2*np.pi)*360, d(theta, v, omega_k), label = r"$\beta$ = 90 - $\theta_{HB}$")
+plt.plot(theta/(2*np.pi)*360, d(theta, v, omega_k), label = r"$\beta$ = 90$^{\circ}$ - $\theta_{HB}$")
 
 points = [0, 30, 60, 90]
 for i in points:

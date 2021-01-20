@@ -269,11 +269,11 @@ Ved at anvende denne omregning får vi resultatet vist på figur \ref{fig:limit_
   \label{fig:limit_coastdis}
 \end{figure}
 
-Da det er upraktisk at skulle vurdere vinklen til kysten $\beta$ kan vi forsimple dette resultat lidt. Vi ser på \ref{fig:limit_coastdis} at når $\beta$ øger fra 0 til 90$^{\circ}$ så forskydes den grunnlæggende kurve for $\beta = 0$ samtidig som at den mindskes. Vi er nu intterresert i at finde en kurve som indeholder alle disse forskydninger fra variation af $\beta$, således at vi har en effektiv maksimumskurve for $\min{(s_{kyst})}$. Dette tilsvarer at vi tager den maksimale værdi for $\min{(s_{kyst})}$ i hvert punkt ved at vælge den kystvinkel $\beta$ som giver den største værdi. Vi husker på at
+Da det er upraktisk at skulle vurdere vinklen til kysten $\beta$ kan vi forsimple dette resultat lidt. Vi ser på \ref{fig:limit_coastdis} at når $\beta$ øger fra 0 til 90$^{\circ}$ så forskydes den grunnlæggende kurve for $\beta = 0$ samtidig som at den formindskes. Vi er nu intterresert i at finde en kurve som indeholder alle disse forskydninger fra variation af $\beta$, således at vi har en effektiv maksimumskurve for $\min{(s_{kyst})}$. Dette tilsvarer at vi tager den maksimale værdi for $\min{(s_{kyst})}$ i hvert punkt ved at vælge den kystvinkel $\beta$ som giver den største værdi. Vi husker på at
 \begin{align*}
-  s_{kyst} = d\cdot \sin{(\theta_{HB} + \beta)}
+  s_{kyst} \propto \sin{(\theta_{HB} + \beta)}
 \end{align*}
-og derved ser vi at opnår dette ved at vælge $\beta = \frac{\pi}{2} - \theta_{HB}$. Da finder lidt ovveraskende at den maksimale værdi som funktion af $\theta_{HB}$ er
+og derved ser vi, at vi opnår maksimalværdi ved at vælge $\beta = \frac{\pi}{2} - \theta_{HB}$. Da finder vi at den maksimale værdi som funktion af $\theta_{HB}$ er
 \begin{align}
   \max{(s_{kyst})}(\theta_{HB}) = d
   \label{eq:max_s_kyst}
@@ -281,7 +281,7 @@ og derved ser vi at opnår dette ved at vælge $\beta = \frac{\pi}{2} - \theta_{
 Bruger vi denne approksimation får vi et anvendelig plot for aflæsning af den gyldige zone for baggrundsmetoden uavhængig af kystvinklen. Dette er vist på figur \ref{fig:limit_coastdis_betamax}.
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/limit_coastdis_betamax.pdf}
-  \caption{...}
+  \caption{Den minimumme afstand $\min{(s_{kyst})}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden (se figur \ref{fig:limit_coastdis}). Den lyserøde kurve for $\beta = 90^{\circ} - \theta_{HB}$, tilsvarerer det valg af $\beta$ for hvert punkt som giver den største værdi. Dermed har vi et maksimumsestimat på $\min{(s_{kyst})}$ som kan aflæses uavhængig af kystvinkel $\beta$ }
   \label{fig:limit_coastdis_betamax}
 \end{figure}
 
@@ -290,14 +290,23 @@ Ved brug af koden vist i afsnit \ref{sec:numerical_method} har vi simmulert fors
 
 
 \section{Diskussion}
-Ud fra den matematiske slutning om pejlingen i teorem \ref{Teo:pejling} er det klart at pejlingen kan bruges som en direkte indikator på om bådene er på kollisionskurs. Hvis KB nærmer sig og pejlingen ikke ændres er dette ensbetydene med en kollision, hvis ikke kurs eller retning ændres. Altså vil lokalpunktsmetoden være troværdig i alle situationer og derfor også den bedst egnede metode. \par
-Som antydet i \cite{duelighed} fandt vi dog at baggrundsmetoden kan bruges som en indikator på om der er pejltræk eller ikke. Dette er dog ikke uden begrænsninger da baggrunden, i tilfælde med konstant pejling, vil flytte sig tilsvarende HB's relative bevægelse til baggrunden. Siden denne bevægelse bliver mindre og mindre tydelig desto længere væk fra den observerede baggrund man befinder sig, kan baggrundes metoden effektivt anvendes ved større afstande til kysten. Dette er i overenstemmelse med påstanden fra \cite{duelighed}. Med kendskab til den minimumme vinkelhastighed $\omega_k$ for en kendelig forflytning samt HB's hastighed, vil man kunne kortlægge det gyldige område for baggrundsmetoden via resultaterne fra figur \ref{fig:limit_dimensionless}. Med kvalificerede gæt på disse størrelser kom vi frem til resultatet i figur \ref{fig:limit_dimension} som giver et estimat på dette gyldige område. Bemærk dog at disse estimater er ganske usikkre og derfor kun bør tolkes som et estimat på størrelsesorden af området. \par
-På figur \ref{fig:limit_coastdis} får vi relevant information om hvad afstanden $d$ tilsvarer i den direkte afstand til kysten $s_{kyst}$ som er mere anvendelig i praksis.
-
-...
-
-
-Dette er det mest realtiske bud på en kurve for defineringen af det gyldige område med baggrundsmetoden.
+Ud fra den matematiske slutning om pejlingen i teorem \ref{Teo:pejling} er det klart at pejlingen kan bruges som en direkte indikator på om bådene er på kollisionskurs. Hvis KB nærmer sig og pejlingen ikke ændres er dette ensbetydene med at bådene vil kollidere, hvis ikke kurs eller retning ændres. Altså vil lokalpunktsmetoden være troværdig i alle situationer og derfor også den bedst egnede metode. \par
+Som antydet i \cite{duelighed} fandt vi at baggrundsmetoden kan bruges som en indikator på om der er pejltræk eller ikke. Dette er dog ikke uden begrænsninger da baggrunden, i tilfælde med konstant pejling, vil flytte sig tilsvarende HB's relative bevægelse til baggrunden. Siden denne bevægelse bliver mindre og mindre tydelig desto længere væk fra den observerede baggrund man befinder sig, kan baggrundes metoden effektivt anvendes ved større afstande til kysten. Dette er i overenstemmelse med påstanden fra \cite{duelighed}. Med kendskab til den minimumme vinkelhastighed $\omega_k$ for en kendelig forflytning samt HB's hastighed, vil man kunne kortlægge det gyldige område for baggrundsmetoden via resultaterne fra figur \ref{fig:limit_dimensionless}. Med kvalificerede gæt på disse størrelser kom vi frem til resultatet i figur \ref{fig:limit_dimension} som giver et estimat på dette gyldige område. Bemærk dog at disse estimater er ganske usikkre og derfor kun bør tolkes som et estimat på størrelsesorden af området. \par
+På figur \ref{fig:limit_coastdis} får vi relevant information om hvad afstanden $d$ tilsvarer i den direkte afstand til kysten $s_{kyst}$ som er mere anvendelig i praksis. Siden dette involverer at man som søfarer må vurdere vinklen til kysten også, kan vi hellere bruge det endelige resultat på figur \ref{fig:limit_coastdis_betamax}. Her har vi den maksimale minimumsafstand som trænges ved et vilkårlig valg af kystvinkel $\beta$. Ved aflæsning af denne figur finder vi:
+\begin{table}[H]
+ \begin{center}
+ \caption{....}
+ \begin{tabular}{|c|c|} \hline
+ $\theta_{HB}$ [$^{\circ}$] & $s_{kyst}$ [m]  \\ \hline
+ 0 & 0 \\ \hline
+ 30 & 417 \\ \hline
+ 60 & 722  \\ \hline
+ 90 & 833 \\ \hline
+ \end{tabular}
+ \label{tab:valid_area}
+ \end{center}
+\end{table}
+Dette giver et fornuftig billede af det gyldige område for baggrundsmetoden. Her ser vi at baggrundsmetoden kan bruges tættere på kysten når KB kommer forfra eller bagfra i en spids vinkel, mens en 90 $^{\circ}$ pejling vil være det mest krævende sted at anvende metoden.
 
 
 
@@ -356,15 +365,26 @@ Dette er det mest realtiske bud på en kurve for defineringen af det gyldige omr
 % Se bort for strømforhold, vind og andre mærkelige ting?
 
 \section{Konklusion}
-Fra den matematiske udledning kan vi konkludere at pejlingen kan bruges som et direkte indikator på om to både er på kollisionskurs. Dette kan formuleres som teoremet:
+Fra den matematiske udledning kan vi konkludere at pejlingen kan bruges som en direkte indikator på at to både er på kollisionskurs. Når to både nærmer sig, med konstant hastighed, vil pejlingen være konstant hvis disse er på kollisionskurs. Hvis pejlingen ændres er disse ikke på kollisionskurs. Vi fandt at baggrundsmetoden kan bruges som en indikator på om der er pejltræk hvis iagtageren befinder sig tilstrækkelig langt væk fra baggrunden. Dette skyldes at baggrundens forflytning kan være kendelig selvom bådene er på kollisionskurs, når iagtageren befinder sig relativt nær kysten. Her er resultatet fra figur \ref{fig:limit_dimensionless} det mest generelle angivelse af det gyldige område for brug af baggrundsmetoden. Ikke desto mindre fandt vi ved brug af en række estimater afstanden til kysten som funktion af pejling som kræves for at anvende baggrundsmetoden. Dette er vist på figur \ref{fig:limit_coastdis_betamax} og vi ser at vi ved spidse vinkler for pejlingen på omrking 30 eller 150 $^{\circ}$ kan bruge baggrundsmetoden for afstande til kysten større end 417 m. Ved en pejling på 90 $^{\circ}$ var dette krav størst på 833 m. Altså tjener dette som et øvre estimat for hvornår baggrundsmetoden kan bruges med sikkerhed generelt. Siden dette er basert på usikkre antagelser bør dette dog kun tolkes som et bud på størrelsesordnen for denne grænse som altså kan sættes til 1 km i praksis.
 
-\begin{theorem-non}
-  Hvis og bare hvis to både har kollisionskurs og nærmer sig i afstand vil pejlingen fra den ene båd til den anden være konstant.
-\end{theorem-non}
 
-Videre fandt vi at baggrundsmetoden, hvor man vurdere om baggrunden flytter sig relativt til den anden båd, kan bruges som en indirekte indikator på kollisionskurs. Dette skyldes at baggrundens forflytning kan være kendelig selvom bådene er på kollisionskurs, når iagtageren befinder sig relativt nær kysten. Et estimat af grænseværdien for denne kystafstand er vist på figur \ref{fig:limit_coastdis} og tabel \ref{tab:valid_area}, men vi ser at generelt at baggrundsmetoden kan bruges for kystafstande på ca. 800 m eller større.
-\\
-Baggrundspunktet bevæger sig ligesom dit eget skib inde på kysten. Så spørgsmålet er om du ville kunne se en kendelig forflytning af dit eget skib (med sinus led af $\theta_{HB}$) hvis det var placeret på baggrundspunktet.
+
+
+
+
+
+%  Dette kan formuleres som teoremet:
+%
+% \begin{theorem-non}
+%   Hvis og bare hvis to både har kollisionskurs og nærmer sig i afstand vil pejlingen fra den ene båd til den anden være konstant.
+% \end{theorem-non}
+%
+% Altså når to både nærmer sig vil disse være på kollisionskurs hvis ikke det er pejltræk og omvendt hvis der er pejltræk.
+
+
+% Videre fandt vi at baggrundsmetoden, hvor man vurdere om baggrunden flytter sig relativt til den anden båd, kan bruges som en indirekte indikator på kollisionskurs. Dette skyldes at baggrundens forflytning kan være kendelig selvom bådene er på kollisionskurs, når iagtageren befinder sig relativt nær kysten. Et estimat af grænseværdien for denne kystafstand er vist på figur \ref{fig:limit_coastdis} og tabel \ref{tab:valid_area}, men vi ser at generelt at baggrundsmetoden kan bruges for kystafstande på ca. 800 m eller større.
+% \\
+% Baggrundspunktet bevæger sig ligesom dit eget skib inde på kysten. Så spørgsmålet er om du ville kunne se en kendelig forflytning af dit eget skib (med sinus led af $\theta_{HB}$) hvis det var placeret på baggrundspunktet.
 
 
 
@@ -387,6 +407,7 @@ Baggrundspunktet bevæger sig ligesom dit eget skib inde på kysten. Så spørgs
   \bibitem{groensund} Albrechten S. (2007). \textit{Sejlads for Begyndere} \url{http://www.groensund.dk/upl/website/sejlads/SejladsforBegyndere2.pdf}
 
 
+\end{thebibliography}
 
 \clearpage
 \onecolumngrid
@@ -396,24 +417,50 @@ Baggrundspunktet bevæger sig ligesom dit eget skib inde på kysten. Så spørgs
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/subplot_C1.pdf}
-  \caption{}
-  \label{}
+  \caption[A table inside a caption]{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Figurrække & $HB_{start}$  & $KB_{start}$ & $HB_{slut}$ & $KB_{slut}$\\ \hline
+1  & (0,0) & (20,0) & (0, 40) & (0, 40) \\ \hline
+2  & (0,0) & (40,30) & (0, 40) & (0, 40) \\ \hline
+3  & (0,0) & (50,40) & (0, 40) & (0, 40) \\ \hline
+4  & (0,0) & (50,60) & (0, 40) & (0, 40) \\ \hline
+\end{tabular}}
+  \label{fig:subplot_C1}
 \end{figure}
-
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/subplot_C2.pdf}
-  \caption{}
-  \label{}
+  \caption[A table inside a caption]{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Figurrække & $HB_{start}$  & $KB_{start}$ & $HB_{slut}$ & $KB_{slut}$\\ \hline
+1  & (0,0) & (50,40) & (0, 40) & (0, 40) \\ \hline
+2  & (0,0) & (50,70) & (0, 40) & (0, 40) \\ \hline
+3  & (0,0) & (30,80) & (0, 40) & (0, 40) \\ \hline
+4  & (0,0) & (0.1,80) & (0, 40) & (0, 40) \\ \hline
+\end{tabular}}
+  \label{fig:subplot_C2}
 \end{figure}
+
 
 \clearpage
 \subsection{Simmuleringer uden kollision}
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/subplot_NC1.pdf}
-  \caption{}
-  \label{}
+  \caption[A table inside a caption]{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Figurrække & $HB_{start}$  & $KB_{start}$ & $HB_{slut}$ & $KB_{slut}$\\ \hline
+1  & (0,0) & (30,0) & (0, 40) & (10, 30) \\ \hline
+2  & (0,0) & (40,40) & (0, 40) & (10, 40) \\ \hline
+3  & (0,0) & (30,60) & (0, 40) & (10, 44) \\ \hline
+4  & (0,0) & (10,80) & (0, 40) & (10, 44) \\ \hline
+\end{tabular}}
+  \label{fig:subplot_NC1}
 \end{figure}
+
+
 
 
 

@@ -15,6 +15,10 @@
 *.thm
 *.bib
 
+#Animations
+*.mp4
+*.mov
+
 #Text files including run data
 *.txt
 *.data
