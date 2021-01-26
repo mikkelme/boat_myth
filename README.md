@@ -4,7 +4,7 @@ Selve artiklen findes under article. Koden som bruges findes i code. Her er supp
 # Animationer
 Kan tage lidt tid at loade.
 
-## Animation 1
+## Animation 1 (Kollision)
 **Beskrivelse**: Simpel kollision
 
 |         | Start         | Slut   |
@@ -14,7 +14,7 @@ Kan tage lidt tid at loade.
 
 ![](article/figures/aniC1.gif)
 
-## Animation 2
+## Animation 2 (Kollision)
 **Beskrivelse**: Simpel kollision
 
 |         | Start         | Slut   |
@@ -24,7 +24,7 @@ Kan tage lidt tid at loade.
 
 ![](article/figures/aniC2.gif)
 
-## Animation 3
+## Animation 3 (Kollision)
 **Beskrivelse**: Simpel kollision
 
 |         | Start         | Slut   |
@@ -34,7 +34,7 @@ Kan tage lidt tid at loade.
 
 ![](article/figures/aniC3.gif)
 
-## Animation 4
+## Animation 4 (Ikke-Kollision)
 **Beskrivelse**: Ikke kollision, men kan med baggrundsbetoden forvekles med en kollision i begyndelsen
 
 |         | Start         | Slut   |
