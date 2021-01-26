@@ -52,6 +52,6 @@ Kan tage lidt tid at loade.
 | **HB**  | (0,0)         | (0,100) |
 | **KB**  | (20,0)       | (10,90) |
 
-![](article/figures/aniNC1.gif)
+![](article/figures/aniNC2.gif)
 
 
