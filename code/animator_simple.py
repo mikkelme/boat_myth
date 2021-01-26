@@ -6,10 +6,10 @@ import matplotlib.animation as animation
 import matplotlib.gridspec as gridspec
 
 
-def animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manual_limit):
+def animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manual_limit, T = 10):
 
     #Positional data
-    MB_pos, OB_pos = simulator(MB_start, OB_start, MB_end, OB_end, T = 10, dt = 0.05)
+    MB_pos, OB_pos = simulator(MB_start, OB_start, MB_end, OB_end, T, dt = 0.05)
     MB_pos_mark, OB_pos_mark = MB_pos - MB_pos, OB_pos - MB_pos
 
     #Hard coded settings
@@ -237,15 +237,15 @@ def animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manu
 
 if __name__ == "__main__":
     MB_start = (0,0)
-    OB_start = (20,0)
-    MB_end = (0, 100)
-    OB_end = (0, 90)
-    coast_center = (100, 100)
-    coast_angle = deg_to_rad(90)
-    manual_limit = [(np.nan, np.nan, 0, 100), \
-                    (np.nan, np.nan, -75, 25)]  #[Left: (xmin, xmax, ymin, ymax), Right:(xmin, xmax, ymin, ymax)]
+    OB_start = (70,-20)
+    MB_end = (0, 80)
+    OB_end = (0, 50)
+    coast_center = (200, 100)
+    coast_angle = deg_to_rad(60)
+    manual_limit = [(-5, 150, -100, 90), \
+                    (-5, 150, np.nan, np.nan)]  #[Left: (xmin, xmax, ymin, ymax), Right:(xmin, xmax, ymin, ymax)]
 
-    ani = animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manual_limit)
+    ani = animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manual_limit, T = 15)
     filename = "../article/figures/aniNC2.gif"
     writer = 'imagemagick'
     ani.save(filename, writer = writer, dpi = 200, fps=30)
