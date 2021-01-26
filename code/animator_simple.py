@@ -237,16 +237,16 @@ def animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manu
 
 if __name__ == "__main__":
     MB_start = (0,0)
-    OB_start = (40,40)
-    MB_end = (0, 40)
-    OB_end = (10, 40)
+    OB_start = (20,0)
+    MB_end = (0, 100)
+    OB_end = (0, 90)
     coast_center = (100, 100)
     coast_angle = deg_to_rad(90)
-    manual_limit = [(np.nan, np.nan, -25, 100), \
-                    (np.nan, np.nan, -25, 100)]  #[Left: (xmin, xmax, ymin, ymax), Right:(xmin, xmax, ymin, ymax)]
+    manual_limit = [(np.nan, np.nan, 0, 100), \
+                    (np.nan, np.nan, -75, 25)]  #[Left: (xmin, xmax, ymin, ymax), Right:(xmin, xmax, ymin, ymax)]
 
     ani = animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manual_limit)
-    filename = "../article/figures/aniNC1.gif"
+    filename = "../article/figures/aniNC2.gif"
     writer = 'imagemagick'
     ani.save(filename, writer = writer, dpi = 200, fps=30)
     #plt.show()
