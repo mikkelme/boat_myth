@@ -5,7 +5,7 @@ Selve artiklen findes under article. Koden som bruges findes i code. Her er supp
 Kan tage lidt tid at loade.
 
 ## Animation 1 (Kollision)
-**Beskrivelse**: Simpel kollision
+**Beskrivelse**: Simpel kollision hvor baggrundsmetoden er misvisende. 
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
@@ -15,7 +15,7 @@ Kan tage lidt tid at loade.
 ![](article/figures/aniC1.gif)
 
 ## Animation 2 (Kollision)
-**Beskrivelse**: Simpel kollision
+**Beskrivelse**: Lignende eksempel som i animaiton 1, men her gør den mindre pejlingsvinkel at baggrundsmetoden ikke er misvisende i samme grad. For iagtageren synes baggrunden ikke at forflytte sig i samme grad (vinkelmæssig) som i animatiom 1.
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
@@ -25,7 +25,7 @@ Kan tage lidt tid at loade.
 ![](article/figures/aniC2.gif)
 
 ## Animation 3 (Kollision)
-**Beskrivelse**: Simpel kollision
+**Beskrivelse**: Tilfælde hvor baggrundsmetoden giver det mest misvisende resultat mulig. 
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
@@ -35,7 +35,7 @@ Kan tage lidt tid at loade.
 ![](article/figures/aniC3.gif)
 
 ## Animation 4 (Ikke-Kollision)
-**Beskrivelse**: Ikke kollision, men kan med baggrundsbetoden forvekles med en kollision i begyndelsen
+**Beskrivelse**: Eksempel på ikke kollision, hvor man ved brug af baggrundsbetoden kan tro at bådene er på kollisionskurs i begyndelsen af animationen. 
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
@@ -45,12 +45,12 @@ Kan tage lidt tid at loade.
 ![](article/figures/aniNC1.gif)
 
 ## Animation 5 (Ikke-Kollision)
-**Beskrivelse**: Ikke kollision....
+**Beskrivelse**: Endnu et eksempel hvor baggrundsmetoden umiddelbart predikere kollision selvom dette langt fra er tilfældet. Dette bliver tydelig efter lidt tid dog.
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
-| **HB**  | (0,0)         | (0,100) |
-| **KB**  | (20,0)       | (10,90) |
+| **HB**  | (0,0)         | (0,80) |
+| **KB**  | (70,-20)       | (10,50) |
 
 ![](article/figures/aniNC2.gif)
 
