@@ -1,8 +1,5 @@
-# boat_myth
-Selve artiklen findes under article. Koden som bruges findes i code. Her er supplerende animationer til rapporten. 
-
 # Animationer
-Kan tage lidt tid at loade.
+Her findes animationer til støtte af resultaterne i rapporten. Animatioerne viser forskellige situationer med og uden kollision, og hvordan sigtelinjen til baggrunden ændres undervejs. Bemærk at det kan tage lidt tid at loade.
 
 ## Animation 1 (Kollision)
 **Beskrivelse**: Simpel kollision hvor baggrundsmetoden er misvisende. 
