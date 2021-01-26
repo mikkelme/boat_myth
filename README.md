@@ -45,7 +45,7 @@ Kan tage lidt tid at loade.
 ![](article/figures/aniNC1.gif)
 
 ## Animation 5 (Ikke-Kollision)
-**Beskrivelse**: Ikke kollision...
+**Beskrivelse**: Ikke kollision....
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
