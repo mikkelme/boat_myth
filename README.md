@@ -19,8 +19,8 @@ Kan tage lidt tid at loade.
 
 |         | Start         | Slut   |
 |:-------:|:-------------:| :-----:|
-| **HB**  | (x,x)         | (0,40) |
-| **KB**  | (x,x)       | (0,40) |
+| **HB**  | (0,0)         | (0,40) |
+| **KB**  | (40,90)       | (0,40) |
 
 ![](article/figures/aniC2.gif)
 
