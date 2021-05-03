@@ -138,8 +138,8 @@ Vi forestiller os to både til søs, som nærmer sig hinanden. Vi kalder den ene
   \vec{P}(t) =  \vec{P}_0 + \vec{v}\cdot t
   \label{eq:motion}
 \end{align}
-Vi definerer en kollision som tilfældet hvor bådene har samme position til samme tidspunkt. Bemærk at en kollision i praksis vil ske i flere tilfælde da vi ikke har taget hensyn til bådenes udstrækning her. Dette er dog en nødvendig antagelse da det er iagttagerens placering på HB som vil udgøre det ene punkt, lige så vel som iagttageren må vælge at pejle til et bestemt punkt på KB også. \par
-For at vudere om bådene er på kollisionskurs er det angiveligt nyttigt at benytte pejlingen. Vi definerer i matematisk forstand pejlingen $\theta_{HB}$ fra HB som vinklenen mellem kursen til HB og sigtelinjen fra HB til KB. Dette er illustreret på figur \ref{fig:metode_tegning}.
+Vi definerer en kollision som tilfældet hvor bådene har samme position til samme tidspunkt. Bemærk at en kollision i praksis vil ske i flere tilfælde da vi ikke har taget hensyn til bådenes udstrækning her. Dette er dog en nødvendig antagelse, da det er iagttagerens placering på HB som vil udgøre det ene punkt, lige så vel som iagttageren må vælge at pejle til et bestemt punkt på KB også. \par
+For at vudere om bådene er på kollisionskurs, er det angiveligt nyttigt at benytte pejlingen. Vi definerer i matematisk forstand pejlingen $\theta_{HB}$ fra HB som vinklenen mellem kursen til HB og sigtelinjen fra HB til KB. Dette er illustreret på figur \ref{fig:metode_tegning}.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/metode_tegning.png}
@@ -148,7 +148,7 @@ For at vudere om bådene er på kollisionskurs er det angiveligt nyttigt at beny
 \end{figure}
 
 \subsection{Numeriske simuleringer som støtte til matematiske resultater}\label{sec:numerical_method}
-I tillæg til den matematiske analyse vil vi bruge numeriske metoder (simmuleringer) som som støtte til resultaterne. Da alle bevægelserne er lineære kan vi simmulere bådenes præcise bevægelse uden usikkerhed. Dette gøres ved at evaluere bevægelsesligning \ref{eq:motion} ved forskellige tidspunkter. Dette er analogt til eulers metode uden acceleration. Vi skriver simmuleringskoden i python som angivet nedenfor. Denne er også tilgængelig på github \cite{github} sammen med diverse scripts for plotting af data.
+I tillæg til den matematiske analyse vil vi bruge numeriske metoder (simmuleringer) som støtte til resultaterne. Da alle bevægelserne er lineære kan vi simmulere bådenes præcise bevægelse uden usikkerhed. Dette gøres ved at evaluere bevægelsesligning \ref{eq:motion} ved forskellige tidspunkter. Dette er analogt til Eulers metode uden acceleration. Vi skriver simmuleringskoden i python som angivet nedenfor. Denne er også tilgængelig på github \cite{github} sammen med diverse scripts for plotting af data.
 
 \begin{minted}[breaklines, breakautoindent = true]{python}
 import numpy as np
@@ -179,7 +179,7 @@ def simulator(MB_start, OB_start, MB_end, OB_end, T = 10, dt = 0.1):
 \section{Resultater}
 
 \subsection{Pejlingens betydning for kollisionskurs (matematisk udledning)}\label{sec:pejling_betydning}
-Da vi har antaget at bådene bevæger sig med konstant hastighed kan vi bruge en lineær transformation til at skifte koordinatsystem til intertialsystemet hvor HB er i ro (HB's intertialsystem). Med andre så kan vi frit vælge at beskrive positionen til KB som den opleves for en iagtager ombord på HB. Positionen $\vec{P}'_{KB}$ til KB i det nye intertialsystem kan skrives:
+Da vi har antaget at bådene bevæger sig med konstant hastighed, kan vi bruge en lineær transformation til at skifte koordinatsystem til intertialsystemet (dvs. det koordinatsystem som beskriver relativ bevægelse til iagttageren) hvor HB er i ro. Vi kalder dette for HB's intertialsystem. Med andre ord så kan vi frit vælge at beskrive positionen til KB som den opleves for en iagttager ombord på HB. Positionen $\vec{P}'_{KB}$ til KB i det nye intertialsystem kan skrives:
 \begin{align*}
   \vec{P'}_{KB}(t) &= \vec{P}_{KB}(t) - \vec{P}_{HB}(t) \\
   &= \vec{P}_{0,KB} + \vec{v}_{KB}t - \vec{P}_{0,HB} - \vec{v}_{HB}t \\
@@ -209,22 +209,24 @@ Fra dette ser vi at vinkelkoordinat $\phi_{KB}$ er konstant (uavhængig af tid),
 \end{align*}
 Fra dette ræsonoment har vi altså vist at pejlingen vil være konstant i tilfældet hvor bådene er på kollisionkurs. Hvis bådene følger kollisionskursen men i modsat retning (bevæger sig væk fra hianden), kan vi indføre betingelsen $\vec{P}'_{KB}(t_i) = \vec{0}$ for et tidspunkt $t_i < 0$. Derved kan vi opstille en ligning tilsvarende \ref{eq:P=v} og derved finde at pejlingen også vil være konstant i dette tilfælde. Hvis ikke bådene er på kollisionskurs er ligning \ref{eq:P=v} ikke længere gyldig og $P'_{KB}$ kan tage hvilken som helst retlinjet bane uden om $\vec{P}'_{KB} = \vec{0}$. Det betyder at $\phi_{KB}$ og dermed også pejlingen $\theta_{KB}$ vil ændre sig som funktion af tid. Dette fører til slutningen:
 \begin{theorem}
-  Hvis og bare hvis to både med konstant hastighed som nærmer sig i afstand har konstant pejling til hinaden er disse på kollisionskurs.
+  Hvis og bare hvis to både med konstant hastighed som nærmer sig i afstand har konstant pejling til hinanden er disse på kollisionskurs.
   \label{Teo:pejling}
 \end{theorem}
 \subsection{Gengivelse af konstant-pejling-udledningen uden matematisk notation}
-Siden begge bådene antages at bevæge sig med konstant fart og i en ret linje vil en iagtager på HB også se at KB bevæger sig med konstant fart og i en ret linje. I tilfældet hvor bådene er på kollisionskurs vil en iagtager på HB altså se at KB har kurs direkte mod iagttageren. Dette er den eneste mulige kurs hvorpå bådene kan kollidere uden at medparterne ændrer retning eller fart undervejs. Derfor følger det at pejlingen også vil være konstant i tilfældet med kollisionskurs. Det eneste andet tidspunkt at man vil opleve at pejlingen er konstant er hvis begge bådene står stille eller bevæger sig i modsat retning af hvad der kræves for kollisionskursen.
+Siden begge bådene antages at bevæge sig med konstant fart og i en ret linje vil en iagttager på HB også se at KB bevæger sig med konstant fart og i en ret linje. I tilfældet hvor bådene er på kollisionskurs vil en iagttager på HB altså se at KB har kurs direkte mod iagttageren. Dette er den eneste mulige kurs hvorpå bådene kan kollidere uden at medparterne ændrer retning eller fart undervejs. Derfor følger det at pejlingen også vil være konstant i tilfældet med kollisionskurs. De eneste andre situationer hvor pejlingen er konstant er når bådene ligger stille, sejler parallelt eller sejler væk fra hinanden i modsat retning af kollisionskursen. For disse tre tilfælde nærmer bådene sig ikke i afstand, og det er dermed enkelt at afgøre, at der ikke er kollisionsfare.
 
 
- \subsection{Grænsebetingelser for brug af baggrundsmetoden}
- Med udgangspunkt i teorem \ref{Teo:pejling} kan vi undersøge om brugen af baggrundensmetoden er en pålidelig indikator for en fremtidig kollision. Vi skal altså undersøge om det er sammenfald mellem en konstant pejling og tilfældet hvor baggrunden ikke bevæger sig relativt til sigtelinjen gennem KB. \par
- I tilfældet med kollisionskurs ved vi fra teorem \ref{Teo:pejling} at sigtelinjen fra HB gennem KB vil have en konstant vinkel. I det enkle tilfælde hvor kystlinjen er relinjet og parallel med kursen til HB vil sigtelinjens skæring med kystlinjen forflytte sig med samme hastighed som HB. Dette resultat bekræftes ved simuleringen vist på figur \ref{fig:eks1}.
- \begin{figure}[H]
-   \includegraphics[width=\linewidth]{figures/eksempel1.pdf}
-   \caption{En simulering af bådene HB og KB på kollisionskurs, med kollisionspunkt 100 meter fra kysten. Her plottes fire positioner for bådene (inklusiv kollisionspunktet) jævnt fordelt i tid. Fra de sorte stiblede linjer ser vi hvordan sigtelinjen fra HB gennem KB skærer med kysten. Dette skæringspunkt forflytter sig som forventet i henhold til HB's bevægelse.}
-   \label{fig:eks1}
- \end{figure}
- Hvis sigtelinjens skæring med kystlinjen er kendelig, på trods af at bådene er på kollisionskurs (pejlingen er konstant), vil baggrundsmetoden være vildledene. Fra HB's perspektiv vil baggrundspunktet (BP) bevæge sig med en hastighed $\vec{v'}_{BP} = - \vec{v}_{HB}$. Dette giver en observeret vinkelhastighed $\omega_O$:
+\subsection{Grænsebetingelser for brug af baggrundsmetoden}
+Med udgangspunkt i teorem \ref{Teo:pejling} kan vi undersøge om brugen af baggrundensmetoden er en pålidelig indikator for en fremtidig kollision.
+Vi skal altså undersøge om der er sammenfald mellem en konstant pejling og tilfældet hvor baggrunden ikke bevæger sig relativt til sigtelinjen gennem KB. \par
+I tilfældet med kollisionskurs ved vi fra teorem \ref{Teo:pejling} at sigtelinjen fra HB gennem KB vil have en konstant vinkel. I det enkle tilfælde hvor kystlinjen er relinjet og parallel med kursen til HB vil sigtelinjens skæring med kystlinjen forflytte sig med samme hastighed som HB. Dette resultat bekræftes ved simuleringen vist på figur \ref{fig:eks1}.
+\begin{figure}[H]
+ \includegraphics[width=\linewidth]{figures/eksempel1.pdf}
+ \caption{En simulering af bådene HB og KB på kollisionskurs, med kollisionspunkt 100 meter fra kysten. Her plottes fire positioner for bådene (inklusiv kollisionspunktet) jævnt fordelt i tid. Fra de grå stiblede linjer ser vi hvordan sigtelinjen fra HB gennem KB skærer med kysten. Dette skæringspunkt forflytter sig som forventet i henhold til HB's bevægelse.}
+ \label{fig:eks1}
+\end{figure}
+ Hvis sigtelinjens skæring med kystlinjen forflytter sig kendelig, på trods af at bådene er på kollisionskurs (pejlingen er konstant), vil baggrundsmetoden være vildledene. Vi undersøger derfor hvordan afstanden til kysten spiller en rolle for hvorvidt forflytningen er kendelig. \par
+ Fra HB's perspektiv vil baggrundspunktet (BP) bevæge sig med en hastighed $\vec{v'}_{BP} = - \vec{v}_{HB}$. Dette giver en observeret vinkelhastighed $\omega_O$:
  \begin{align*}
    \omega_O = -\frac{v_{HB}\sin{(\theta_{HB})}}{d}
  \end{align*}
@@ -235,26 +237,26 @@ Siden begge bådene antages at bevæge sig med konstant fart og i en ret linje v
    \frac{v_{HB}\sin{(\theta_{HB})}}{\omega_k} &< d
    \label{eq:limit}
  \end{align}
-Vi kan da bruge denne sammenhæng til at finde den minimume afstand $d$ for brug af baggrundsmetoden som funktion af $\theta_{HB}$. Dette resultat er vist på figur \ref{fig:limit_dimensionless}.
+Vi kan da bruge denne sammenhæng til at finde den minimale afstand $d$ for brug af baggrundsmetoden som funktion af $\theta_{HB}$. Dette resultat er vist på figur \ref{fig:limit_dimensionless}.
  \begin{figure}[H]
    \includegraphics[width=\linewidth]{figures/limit_dimensionless.pdf}
-   \caption{Den minimume afstand $\min{(d)}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden. $d$ beskriver afstanden til kysten via sigtelinjen. Resultatet er angivet med dimensionløse enheder med skaleringsfaktorene $\omega_k$ som er den minimumme vinkelhastighed for en kendelig forflytning og $v_{HB}$ som er farten til HB. For at baggrundsmetoden skal være anvendelig, må vi kræve at $d$ ligger over kurven for $\min{(d)}$.}
+   \caption{Den minimale afstand $\min{(d)}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden. $d$ beskriver afstanden til kysten via sigtelinjen. Resultatet er angivet med dimensionløse enheder med skaleringsfaktorene $\omega_k$ som er den minimumme vinkelhastighed for en kendelig forflytning og $v_{HB}$ som er farten til HB. For at baggrundsmetoden skal være anvendelig, må vi kræve at $d$ ligger over kurven for $\min{(d)}$.}
    \label{fig:limit_dimensionless}
  \end{figure}
 
 
 \subsubsection{Definering af kendelig forflyting}
 For at bestemme enhederne til figur \ref{fig:limit_dimensionless}, må vi definere hvad en kendelig forflytning er. Hertil bruger vi en række kvalificerede gæt for at finde et estimat for $\omega_k$. Bemærk at følgende resultater derfor bygger på en del usikkerheder. \par
-Vi kan forestille os at vi ved observation af KB vil benytte et centralt punkt på båden som referanse mod baggrunden. En mulig defintion på en kendelig forflytning kan da være at baggrundspunktet har flyttet sig ud til eller forbi kanten af båden i løbet af en observationsperiode. Observationsperioden estimeres til 10 sekunder, svarende til den nedre grænse af tidsintervallet 10-20 sekunder som nævnes i \cite{duelighed}. Vi siger da at forflytningen er kendelig hvis baggrundspunktet har flyttet sig en relativ afstand større eller lig halvdelen af bådens tværlængde set fra iagttageren i løbet af de 10 sekunder. For sejlbåde i den lidt større klasse kan vi bruge en gennomsnitlig bredde på 5 m og længde på 15 m, hvilket giver 10 m som middelestimat (tilsvarer 45 graders sigtelinje). Til sidst må vi vurdere den aftsand hvorved en søfarer har brug for at vurdere kollisionsrisikoen. Hertil bruges 200 meter som en minimumsværdi. Ud fra dette finder vi at en kendelig forflytning kan defineres ved en vinkelhastighed større eller lig $\omega_k$:
+Vi kan forestille os at vi ved observation af KB vil benytte et centralt punkt på båden som referanse mod baggrunden. En mulig defintion på en kendelig forflytning kan da være at baggrundspunktet har flyttet sig ud til eller forbi kanten af båden i løbet af en observationsperiode. Observationsperioden estimeres til 10 sekunder, svarende til den nedre grænse af tidsintervallet 10-20 sekunder som nævnes i \cite{duelighed}. Vi siger da at forflytningen er kendelig hvis baggrundspunktet har flyttet sig en relativ afstand større eller lig halvdelen af bådens tværlængde set fra iagttageren i løbet af de 10 sekunder. For sejlbåde i den lidt større klasse kan vi bruge en gennemsnitlig bredde på 5 m og længde på 15 m, hvilket giver 10 m som middelestimat (tilsvarer 45 graders sigtelinje). Til sidst må vi vudere den afstand der er mellem to skibe når kollisionsrisikoen vurderes. Hertil bruges 200 meter som en minimumsværdi. Ud fra dette finder vi at en kendelig forflytning kan defineres ved en vinkelhastighed større eller lig $\omega_k$:
 \begin{align}
   \omega_k = \frac{\arctan{(\frac{1}{2}\frac{10 \text{m}}{200 \text{m}})}}{10 \text{s}} = 0.0025 s^{-1} \approx  0.14^{\circ}s^{-1}
   \label{eq:omega_k}
 \end{align}
-Bemærk at disse antagelser udelukkende gøres for estimere menneskets evne til at kende en forflytning i praksis. Hvis denne hentes fra faktiske studier vil dette være at foretrække. Ved valg af den nedre grænse for observationsperioden, et stort estimat for bådens tværlængde og et minimumsestimat for afstanden mellem bådene ved observation, estimerer vi effektivt den øvre grænse for en kendelig forflytning. Dette vil føre til at estimatet for den gyldige afstand $d$ bliver et minimumsestimat og dermed giver de bedste vilkår for baggrundsmetodens gyldighed. \par
+Bemærk at disse antagelser udelukkende gøres for estimere menneskets evne til at kende en forflytning i praksis. Hvis værdien for menneskets evne til at kende en forflytning hentes fra faktiske studier vil det være at foretrække. Ved valg af den nedre grænse for observationsperioden, et stort estimat for bådens tværlængde og et minimumsestimat for afstanden mellem bådene ved observation, estimerer vi effektivt den øvre grænse for en kendelig forflytning. Dette vil føre til at estimatet for den gyldige afstand $d$ bliver et minimumsestimat og dermed giver de bedste vilkår for baggrundsmetodens gyldighed. \par
 Vi kan nu bruge at en typisk bådhastighed er 4 knob hvilket tilsvarer omtrent 2 m/s. Med disse værdier kan vi skalere resultatet fra figur \ref{fig:limit_dimensionless} sådan at vi får enhederne vist på figur \ref{fig:limit_dimension}.
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/limit_dimension.pdf}
-  \caption{Den minimume afstand $\min{(d)}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden. $d$ beskriver afstanden til kysten via sigtelinjen i meter. Enhederne er fastlagt ud fra figur \ref{fig:limit_dimension} med brug af estimater for $\omega_k$ og $v_{HB}$.}
+  \caption{Den minimale afstand $\min{(d)}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden. $d$ beskriver afstanden til kysten via sigtelinjen i meter. Enhederne er fastlagt ud fra figur \ref{fig:limit_dimension} med brug af estimater for $\omega_k$ og $v_{HB}$.}
   \label{fig:limit_dimension}
 \end{figure}
 I en situation hvor den retlinjede kyst har en vinkel $\beta$ i forhold til HB's kurs kan vi omregne afstanden $d$ langs sigtelinjen til den korteste afstand $s_{kyst}$ mellem HB og kysten (linjen vinkelretpå kysten). Omregning gøres som
@@ -265,11 +267,11 @@ I en situation hvor den retlinjede kyst har en vinkel $\beta$ i forhold til HB's
 Ved at anvende denne omregning får vi resultatet vist på figur \ref{fig:limit_coastdis}.
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/limit_coastdis.pdf}
-  \caption{Den minimumme afstand $\min{(s_{kyst})}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden. $s_{kyst}$ (se ligning \ref{eq:s_kyst}) er den korteste afstand for HB til kysten, når kysten har en vinkel $\beta$ i forhold til HB's kurs.}
+  \caption{Den minimale afstand $\min{(s_{kyst})}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden. $s_{kyst}$ (se ligning \ref{eq:s_kyst}) er den korteste afstand for HB til kysten, når kysten har en vinkel $\beta$ i forhold til HB's kurs.}
   \label{fig:limit_coastdis}
 \end{figure}
 
-Da det er upraktisk at skulle vurdere vinklen til kysten kan vi forsimple dette resultat lidt. Vi ser på \ref{fig:limit_coastdis} at når $\beta$ øger fra 0 til 90$^{\circ}$ så forskydes den grunnlæggende kurve for $\beta = 0$ samtidig som at den formindskes. Vi er nu intterresert i at finde en kurve som indeholder alle disse forskydninger fra variation af $\beta$, således at vi har en effektiv maksimumskurve for $\min{(s_{kyst})}$. Dette tilsvarer at vi tager den maksimale værdi for $\min{(s_{kyst})}$ i hvert punkt ved at vælge den kystvinkel $\beta$ som giver den største værdi. Vi husker på at
+Da det er upraktisk at skulle vurdere vinklen til kysten kan vi forsimple dette resultat lidt. Vi ser på \ref{fig:limit_coastdis} at når $\beta$ øger fra 0 til 90$^{\circ}$ så forskydes den grunnlæggende kurve for $\beta = 0$ samtidig som at den formindskes. Vi er nu interesseret i at finde en kurve som indeholder alle disse forskydninger fra variation af $\beta$, således at vi har en effektiv maksimumskurve for $\min{(s_{kyst})}$. Dette tilsvarer at vi tager den maksimale værdi for $\min{(s_{kyst})}$ i hvert punkt ved at vælge den kystvinkel $\beta$ som giver den største værdi. Vi husker at
 \begin{align*}
   s_{kyst} \propto \sin{(\theta_{HB} + \beta)}
 \end{align*}
@@ -281,7 +283,7 @@ og derved ser vi at vi opnår maksimalværdi ved at vælge $\beta = \frac{\pi}{2
 Bruger vi denne approksimation får vi et anvendelig plot for aflæsning af den gyldige zone for baggrundsmetoden uavhængig af kystvinklen. Dette er vist på figur \ref{fig:limit_coastdis_betamax}.
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/limit_coastdis_betamax.pdf}
-  \caption{Den minimumme afstand $\min{(s_{kyst})}$ som funktion af pejlingen $\theta_{HB}$ som mulliggør brug af baggrundsmetoden (se figur \ref{fig:limit_coastdis}). Den lyserøde kurve for $\beta = 90^{\circ} - \theta_{HB}$, tilsvarerer det valg af $\beta$ for hvert punkt som giver den største værdi. Dermed har vi et maksimumsestimat på $\min{(s_{kyst})}$ som kan aflæses uavhængig af kystvinkel $\beta$ }
+  \caption{Den minimumme afstand $\min{(s_{kyst})}$ som funktion af pejlingen $\theta_{HB}$ som muliggør brug af baggrundsmetoden (se figur \ref{fig:limit_coastdis}). Den lyserøde kurve for $\beta = 90^{\circ} - \theta_{HB}$, tilsvarerer det valg af $\beta$ for hvert punkt som giver den største værdi. Dermed har vi et maksimumsestimat på $\min{(s_{kyst})}$ som kan aflæses uavhængig af kystvinkel $\beta$ }
   \label{fig:limit_coastdis_betamax}
 \end{figure}
 
@@ -291,7 +293,7 @@ Ved brug af koden vist i afsnit \ref{sec:numerical_method} har vi simmuleret for
 
 \section{Diskussion}
 Ud fra den matematiske slutning om pejlingen i teorem \ref{Teo:pejling} er det klart at pejlingen kan bruges som en direkte indikator på kollisionskurs. Hvis KB nærmer sig og pejlingen ikke ændres er dette ensbetydene med at bådene vil kollidere, hvis ikke kurs eller retning ændres. Altså vil lokalpunktsmetoden være troværdig i alle situationer og derfor også være den bedst egnede metode. \par
-Som antydet i \cite{duelighed} fandt vi dog at baggrundsmetoden kan bruges som en indikator på om der er pejltræk eller ikke givet visse betingelser. I tilfælde med konstant pejling, vil baggrunden flytte sig tilsvarende HB's relative bevægelse til baggrunden. Siden denne bevægelse bliver mindre og mindre tydelig desto længere væk fra den observerede baggrund man befinder sig, kan baggrundes metoden effektivt anvendes ved større afstande til kysten. Dette er i overenstemmelse med påstanden fra \cite{duelighed}. Med kendskab til den minimumme vinkelhastighed $\omega_k$ for en kendelig forflytning samt HB's hastighed, vil man kunne kortlægge det gyldige område for baggrundsmetoden via resultaterne fra figur \ref{fig:limit_dimensionless}. Med kvalificerede gæt på disse størrelser kom vi frem til resultatet i figur \ref{fig:limit_dimension} som giver et estimat på dette gyldige område. Bemærk dog at disse estimater er ganske usikre og derfor kun bør tolkes som et estimat på størrelsesorden af området. \par
+Som antydet på Duelighed.dk \cite{duelighed} fandt vi også at baggrundsmetoden kan bruges som en indikator på om der er pejltræk eller ikke givet visse betingelser. I tilfælde med konstant pejling, vil baggrunden flytte sig tilsvarende HB's relative bevægelse til baggrunden. Siden denne bevægelse bliver mindre og mindre tydelig desto længere væk fra den observerede baggrund man befinder sig, kan baggrundes metoden effektivt anvendes ved større afstande til kysten. Dette er i overenstemmelse med påstanden fra Duelighed.dk \cite{duelighed}. Med kendskab til den minimale vinkelhastighed $\omega_k$ for en kendelig forflytning samt HB's hastighed, vil man kunne kortlægge det gyldige område for baggrundsmetoden via resultaterne fra figur \ref{fig:limit_dimensionless}. Med kvalificerede gæt på disse størrelser kom vi frem til resultatet i figur \ref{fig:limit_dimension} som giver et estimat på dette gyldige område. Bemærk dog at disse estimater er ganske usikre og derfor kun bør tolkes som et estimat på størrelsesorden af området. \par
 På figur \ref{fig:limit_coastdis} får vi relevant information om hvad afstanden $d$ tilsvarer i den direkte afstand til kysten $s_{kyst}$ som er mere anvendelig i praksis. Siden dette involverer, at man som søfarer må vurdere vinklen til kysten i tillæg, bør vi hellere bruge det endelige resultat på figur \ref{fig:limit_coastdis_betamax}. Her har vi den maksimale minimumsafstand nødvendig ved et vilkårlig valg af kystvinkel $\beta$. Ved aflæsning af denne figur finder vi blandt andet punkterne vist i tabel \ref{tab:valid_area}.
 \begin{table}[H]
  \begin{center}
@@ -306,8 +308,8 @@ På figur \ref{fig:limit_coastdis} får vi relevant information om hvad afstande
  \end{center}
  \label{tab:valid_area}
 \end{table}
-Aflæsningen af denne tabel giver et hurtigt overblik af det gyldige område for baggrundsmetoden. Her ser vi at baggrundsmetoden kan bruges tættere på kysten når KB kommer forfra eller bagfra i en spids vinkel, mens en 90 $^{\circ}$ pejling vil være det mest krævende sted at anvende metoden. \par
-Som en sidste note nævner vi muligheden for at baggrundsmetoden kan anvendes hos en erfaren søfarer. Hvis søfaren har erfaring med hvordan bagrunden forflytter sig i forhold til en fast pejlingsvinkel, ved bestemte hastigheder og afstande, kan søfaren vurdere om baggrunden bag en modsejlende båd ændres mere end dette. Altså er dte muligt at søfaren da selv kan korrigere for den "" forflytning som skyldes søfarens egen bevægelse i forhold til baggrunden. Dog kræver det et godt kendskab til forskellige kollisionssituationer, og det er usandsynligt at en såden søfarer da i det hele taget vil have brug for en sådan metode. Uanset vil lokalpunktsmetoden være et mere oplagt valg hvis i tvivl.
+Aflæsningen af denne tabel giver et hurtigt overblik af det gyldige område for baggrundsmetoden. Her ser vi at baggrundsmetoden kan bruges tættere på kysten når KB kommer forfra eller bagfra i en spids vinkel, mens en 90 $^{\circ}$ pejling vil være det mest afstanskrævende sted at anvende metoden. \par
+Som en sidste note nævner vi muligheden for at baggrundsmetoden kan anvendes hos en erfaren søfarer. Hvis søfaren har erfaring med hvordan bagrunden forflytter sig i forhold til en fast pejlingsvinkel, ved bestemte hastigheder og afstande, kan søfaren vurdere om baggrunden bag en modsejlende båd ændres mere eller mindre end dette. Altså er det muligt at søfaren da selv kan korrigere for den forflytning som skyldes søfarens egen bevægelse i forhold til baggrunden. Dog kræver det et godt kendskab til forskellige kollisionssituationer, og det er usandsynligt at en såden søfarer da i det hele taget vil have brug for en sådan metode. Uanset vil lokalpunktsmetoden være et mere oplagt valg, dersom man er i tvivl om en eventuel kollisionskurs.
 \linebreak
 
 
@@ -327,8 +329,8 @@ Som en sidste note nævner vi muligheden for at baggrundsmetoden kan anvendes ho
 \newpage
 
 \section{Konklusion}
-Fra den matematiske udledning kan vi konkludere at pejlingen kan bruges som en direkte indikator på kollisionskurs. Når to både nærmer sig, med konstant hastighed, vil pejlingen være konstant hvis disse er på kollisionskurs. \par
-Vi fandt dog at baggrundsmetoden kan bruges som en indirekte metode til at bestemme om bådene er på kollisionskurs, hvis iagttageren befinder sig sig tilstrækkelig langt væk fra baggrunden. Når bådene er på kollisionskurs, hvilket medfører konstant pejling, vil baggrunden bag kollisionsbåden forflytte sig med samme hastighed som iagttagerens relative hastighed til baggrunden. Ved længere afstande til kysten er denne forflytning ikke kendelig, og derved vil baggrunden opleves at være i ro. Resultatet fra figur \ref{fig:limit_dimensionless} giver den mest generelle angivelse af det gyldige område for brug af baggrundsmetoden. Ikke desto mindre fandt vi ved brug af en række estimater, at afstanden til kysten som kræves for at anvende baggrundsmetoden kan estimeres til sammenhængen vist på figur \ref{fig:limit_coastdis_betamax}. Den største afstand som kræves er her approksimeret til 833 m ved en pejling på 90 $^{\circ}$, mens det ved en pejlingen på 30 eller 150 $^{\circ}$ er 417 m. Det er dog vigtigt at understrege at disse estimater som formidler det generelle resultat fra figur \ref{fig:limit_dimensionless} er basert på usikkre antagelser. Dette bør derfor kun tolkes som et estimat på størrelsesordnen for denne grænse.
+Fra den matematiske udledning kan vi konkludere at pejlingen kan bruges som en direkte indikator på kollisionskurs. Når to både nærmer sig hinanden, med konstant hastighed, vil pejlingen mellem skibende være konstant hvis disse er på kollisionskurs. \par
+Vi fandt dog at baggrundsmetoden kan bruges som en indirekte metode til at bestemme om bådene er på kollisionskurs, hvis iagttageren befinder sig tilstrækkelig langt væk fra baggrunden. Når bådene er på kollisionskurs, hvilket medfører konstant pejling, vil baggrunden bag kollisionsbåden forflytte sig med samme hastighed som iagttagerens relative hastighed til baggrunden. Ved længere afstande til kysten er denne forflytning ikke kendelig, og derved vil baggrunden opleves at være i ro. Resultatet fra figur \ref{fig:limit_dimensionless} giver den mest generelle angivelse af det gyldige område for brug af baggrundsmetoden. Ikke desto mindre fandt vi ved brug af en række estimater, at afstanden til kysten som kræves for at anvende baggrundsmetoden kan estimeres til sammenhængen vist på figur \ref{fig:limit_coastdis_betamax}. Den største afstand som kræves er her approksimeret til 833 m ved en pejling på 90 $^{\circ}$, mens det ved en pejlingen på 30 eller 150 $^{\circ}$ er 417 m. Det er dog vigtigt at understrege at disse estimater som formidler det generelle resultat fra figur \ref{fig:limit_dimensionless} er baseret på usikre antagelser. Dette bør derfor kun tolkes som et estimat på størrelsesordnen for denne grænse.
 
 
 
