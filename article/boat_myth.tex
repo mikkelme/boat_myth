@@ -121,34 +121,50 @@ aps,
 
 
 \section{Introduktion}
-Som søfarer findes der en række nødvendige og basale regler som sikrer god orden og sikkerhed til søs. Heriblandt har vi vigereglerne som regulerer færdslen på vandet og forebygger, at skibe støder sammen \cite{respektforvand}. Disse regler beskriver som udgangspunkt, hvordan man skal agere hvis man er på kollisionskurs med andre fartøjer. Det er fordelagtigt for søfaren at blive opmærksom på en sådan kollision i så god tid som mulig, så man kan korrigere kurs eller fart. \par
-Denne rapport udsprigner af en diskussion med Lars Juel Hansen (sommeren 2019) om en forslået tommelfingerregel for netop vurderingen af kollisionskurs. Formuleringen for det vi fremadrettet skal kalde for \textit{baggrundsmetoden} lyder som følger:
+Som søfarer findes der en række nødvendige og basale regler som sikrer god orden og sikkerhed til søs. Heriblandt har vi vigereglerne, som regulerer færdslen på vandet og forebygger, at skibe støder sammen \cite{respektforvand}. Disse regler beskriver som udgangspunkt, hvordan man skal agere, hvis man er på kollisionskurs med andre fartøjer. Det er naturligvis fordelagtigt for søfaren at blive opmærksom på en sådan kollisionfare i så god tid som mulig, så man kan korrigere kurs eller fart. \par
+Denne rapport udsprigner af en diskussion med Lars Juel Hansen (sommeren 2019) om en tommelfingerregel for netop vurderingen af kollisionskurs. Denne tommelfingerregel består af en metode, hvorpå iagttageren bruger baggrunden som referanse til at afgøre om man er på kollisionskurs eller ikke. Vi skal fremadrettet kalde den metode for \textit{baggrundsmetoden}, og den formuleres her som følger.
 \begin{quote}
-Betragt båden som du mistænker en mulig kollision med og noter et fastliggnede punkt i baggrunden som synes akkurat bag båden. Hvis dette baggrundspunkt i den efterfølgende observationsperiode lader til at flytte sig i forhold til båden, da er du ikke på kollisionskurs med båden. Forbliver baggrundspunktet derimod i sigtelinjen bag båden er dette en indikator på at kollisionskursen er reel.
+\textbf{Baggrundsmetoden}: Betragt båden som du mistænker en mulig kollision med, og noter et fastliggnede punkt i baggrunden som synes akkurat bag båden. Hvis dette baggrundspunkt i den efterfølgende observationsperiode lader til at flytte sig i forhold til båden, da er du \underline{ikke} på kollisionskurs med båden. Forbliver baggrundspunktet derimod i sigtelinjen bag båden er dette en indikator på at kollisionskursen er reel.
 \end{quote}
-Ved en undersøgelse af tilgængelige internetkilder findes forskellige gengivelser af denne regel. Ifølge Duelighed.dk \cite{duelighed} kan man ved "betydelige afstande" til kysten bruge observationen om hvordan kollisionsfartøjet trækker "over land" til at vurdere pejlingen (Retning fra iagttageren til den genstand, der pejles \cite{ordbog}). Altså hævdes det at hvis den modsejlende trækker mod styrbord i forhold til baggrunden så vil fartøjet gå styrbord om iagttagerens fartøj. Modsat vil det gå bagbord om iagttagerens fartøj, hvis det trækker til bagbord over land. Hvis ikke fartøjet bevæger sig kendeligt i forhold til baggrunden, vil det efter sigende, i overenstemmelse med baggrundsmetoden, indikere at fartøjerne er på kollisionskurs. Dog er det værd at bemærke at denne metode indføres som et middel til at vurdere om der er pejltræk (om pejlingen til kollisionsfartøjet ændres). I andre kilder som \cite{studienoter}, \cite{retsinformation} og \cite{groensund}, er det netop pejlingen som angives som den direkte indikator på kollisionskurs. For at afgøre om der er pejltræk, kan man se om kollisionsfartøjet bevæger sig relativ til et fastliggende punkt på eget fartøj. Vi vil fremadrettet betegne denne metode som \textit{lokalpunktsmetoden}. \par
-I denne rapport skal vi fremføre en matematisk analyse af baggrundsmetodens pålidelighed som indikator for kollisionskurs. Dette gøres ved først at beskrive pejlingens betydning for denne vurdering, og dernæst vurdere om der er sammenfald mellem de to metoder. Med dette udgangspunkt skal vi undersøge baggrundsmetodens præcision i forhold til at vurdere pejltræk og dermed udpege eventuelle begrænsninger.\par
+Ved en undersøgelse af tilgængelige internetkilder findes forskellige gengivelser af denne regel. Ifølge Duelighed.dk \cite{duelighed} kan man ved "betydelige afstande" til kysten bruge observationen om hvordan kollisionsfartøjet trækker "over land" til at vurdere pejlingen til kollisionsfartøjet. Pejlingen er retning fra iagttageren til den genstand, der pejles \cite{ordbog}, og der hævdes i denne sammenhæng:
+\begin{quote}
+   "[...] fare skal anses for at være til stede, hvis pejlingen af et skib, der nærmer sig, ikke kendeligt forandrer sig." - Duelighed.dk \cite{duelighed}
+\end{quote}
+Således siger reglen, hvis den modsejlende trækker mod styrbord i forhold til baggrunden, så vil fartøjet gå styrbord om iagttagerens fartøj. Modsat vil det gå bagbord om iagttagerens fartøj, hvis det trækker til bagbord over land. Hvis ikke fartøjet bevæger sig kendeligt i forhold til baggrunden, vil det indikere at fartøjerne er på kollisionskurs. \par
+Dette er i overenstemmelse med baggrundsmetoden, som vi ønsker at undersøge. Dog er det værd at bemærke at metoden fra Duelighed.dk indføres som et middel til at vurdere om der er pejltræk (om pejlingen til kollisionsfartøjet ændres). \par
+I andre kilder (\cite{studienoter}, \cite{retsinformation} \cite{groensund}) er det netop pejlingen, som angives som den direkte indikator på kollisionskurs. Her henvises til en mere direkte fremgangsmåde for at vurdere om der er pejltræk, ved at anvende et fastliggende punkt på eget fartøj som referanse.  Vi vil fremadrettet betegne denne metode som \textit{lokalpunktsmetoden}, og den formuleres her som følger.
+\begin{quote}
+\textbf{Lokalpunktsmetoden}: Betragt båden som du mistænker en mulig kollision med, og noter et fastliggnede punkt på eget fartøj (f.eks. et punkt på rælingen), som synes i sigtelinjen til båden. Hvis båden i den efterfølgende observationsperiode lader til at flytte sig i forhold til punktet, da er der pejltræk, og du er \underline{ikke} på kollisionskurs med båden. Forbliver båden derimod i sigtelinjen fra punktet er dette en indikator på, at der ikke er pejltræk og at kollisionskursen er reel.
+\end{quote}
+Der fremstår nu to centrale spørgsmål for vurderingen af baggrundsmetodens pålidelighed:
+\begin{enumerate}
+  \item Hvilken sammenhæng findes der mellem pejltræk til en anden båd og en mulig kollisionskurs.
+  \item I hvilken grad kan baggrundsmetoden bruges til at vudere om der er pejltræk.
+\end{enumerate}
+I denne rapport skal vi fremføre en matematisk analyse af baggrundsmetodens pålidelighed ved at behandle de to overstående spørgsmål. \par
 Rapporten bestræber sig på at give en fyldestgørende beskrivelse af det omtalte problem, samtidig som at dette formidles til en målgruppe uden særlig matematisk baggrund. Dette er ikke mulig på alle punkter, da en ordenlig bevisførelse kræver en hvis mængde matematik. Jeg har dog forsøgt at gengive de underliggende resultater og vigtiste pointer undervejs, således at man kan springe beregninger og udledninger over uden at miste kontekst. Dette gælder særlig udledningen i afsnit \ref{sec:pejling_betydning}.
 
 
 \section{Metode}
 \subsection{Definering af problemet}
-Vi forestiller os to både til søs, som nærmer sig hinanden. Vi kalder den ene båd for hovedbåden (HB), hvor vi har placeret iagttageren, og den anden båd kalder vi for kollisionsbåden (KB). Vi antager at begge bådene bevæger sig med konstant hastighed, dvs. retlinjet og med konstant fart. Vi beskriver hver båd som et enkelt punkt i et to-dimensionsjonalt aksesystem som tilsvarer bådens position på vandets overflade. Vi bruger aksetitlerne x og y til at beskrive denne position $\vec{P} = (x, y)$ . Positionen til hver båd bliver da en funktion af tid, som er bestemt af parametrene: Startposition $\vec{P}_0$ og hastighed $\vec{v}$. For de to både har vi dermed bevægelseslingingen
+Vi forestiller os to både til søs, som nærmer sig hinanden. Vi kalder den ene båd for hovedbåden (HB), hvor vi har placeret iagttageren, og den anden båd kalder vi for kollisionsbåden (KB). Vi antager at begge bådene bevæger sig med konstant hastighed, dvs. retlinjet og med konstant fart. Vi beskriver hver båd som et enkelt punkt i et koordinatsystem med akserne $x$ og $y$ som angiver bådens position på vandets overflade set oppefra (se figur \ref{fig:metode_tegning}). Hvis vi kender startpositionen og hastigheden til hver båd, har vi alt den information vi trænger for at beskrive situationen. \par Formelt set kan vi beskrive position $\vec{P} = (x, y)$ som en funktion af tid $t$, når vi kender startposition $\vec{P}_0$ og hastighed $\vec{v}$. For de to både har vi dermed bevægelseslingingen
 \begin{align}
   \vec{P}(t) =  \vec{P}_0 + \vec{v}\cdot t
   \label{eq:motion}
 \end{align}
-Vi definerer en kollision som tilfældet hvor bådene har samme position til samme tidspunkt. Bemærk at en kollision i praksis vil ske i flere tilfælde da vi ikke har taget hensyn til bådenes udstrækning her. Dette er dog en nødvendig antagelse, da det er iagttagerens placering på HB som vil udgøre det ene punkt, lige så vel som iagttageren må vælge at pejle til et bestemt punkt på KB også. \par
-For at vudere om bådene er på kollisionskurs, er det angiveligt nyttigt at benytte pejlingen. Vi definerer i matematisk forstand pejlingen $\theta_{HB}$ fra HB som vinklenen mellem kursen til HB og sigtelinjen fra HB til KB. Dette er illustreret på figur \ref{fig:metode_tegning}.
+Hvis du allerede nu føler en ubehag i kroppen ved synet af ligniner og andre matematiske redskaber, så vil jeg understrege at det holder at tænke på dette som en oversættelse fra ord til tal. Det vigtiste at forstå her, er at vi beskriver bådene som punkter i et koordinatsystem, som bevæger sig i rette linjer med uændret hastighed. \par
+Vi definerer en kollision som tilfældet hvor bådene har samme position til samme tidspunkt. I praksis vil man have en kollision allerede hvis bådende passerer tæt forbi hinanden, da bådene naturligvis har en hvis udstrækning. Dette er dog en unødvendig detalje at medregne for dette problem, og vi kan derfor trygt fortsætte at tænke på bådene som enkelte punkter. For at vudere om bådene er på kollisionskurs, er det angiveligt nyttigt at benytte pejlingen. Vi definerer i matematisk forstand pejlingen $\theta_{HB}$ fra HB til KB som vinklen mellem kursen til HB og sigtelinjen fra HB til KB. Dette er illustreret på figur \ref{fig:metode_tegning}.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{figures/metode_tegning.png}
-  \caption{En illustration af pejlingen $\theta_{HB}$ som defineres som vinklen mellem kursen til HB og sigtelinjen fra HB til KB.  }
+  \caption{En illustration af koordinatsystem som beskriver positionen til de to både på vandoverfladen (set fra oven). Her har vi indtegnet pejlingen $\theta_{HB}$ som defineres som vinklen mellem kursen til HB og sigtelinjen fra HB til KB.}
   \label{fig:metode_tegning}
 \end{figure}
+Ud fra disse definitioner og indførelselen af et koordinatsystem, er vi klar til at give os i kast med en analyse af situationen under forskellige betingelser.
 
 \subsection{Numeriske simuleringer som støtte til matematiske resultater}\label{sec:numerical_method}
-I tillæg til den matematiske analyse vil vi bruge numeriske metoder (simmuleringer) som støtte til resultaterne. Da alle bevægelserne er lineære kan vi simmulere bådenes præcise bevægelse uden usikkerhed. Dette gøres ved at evaluere bevægelsesligning \ref{eq:motion} ved forskellige tidspunkter. Dette er analogt til Eulers metode uden acceleration. Vi skriver simmuleringskoden i python som angivet nedenfor. Denne er også tilgængelig på github \cite{github} sammen med diverse scripts for plotting af data.
+I tillæg til den matematiske analyse, skal vi bruge en numeriske metoder (måske bedre kendt som simmuleringer) til støtte af vores resultater. \par
+For den interesserede kan vi simmulere bådens præcise bevægelse (uden usikkerhed), da alle bevægelserne er lineære. Dette gøres ved at evaluere bevægelsesligning \ref{eq:motion} ved forskellige tidspunkter, analogt til Eulers metode uden acceleration. Vi skriver simmuleringskoden i python som angivet nedenfor. Denne er også tilgængelig på github \cite{github} sammen med diverse scripts for plotting af data.
 
 \begin{minted}[breaklines, breakautoindent = true]{python}
 import numpy as np
@@ -177,8 +193,21 @@ def simulator(MB_start, OB_start, MB_end, OB_end, T = 10, dt = 0.1):
 
 
 \section{Resultater}
+\subsection{Sammenhæng mellem pejltræk og kollisionskurs}
+Vi begynder med en intuitiv forklaring på hvorfor pejltrækket har en helt særlig sammenhæng til kollisjonskursen. For at indse denne sammenhæng skal vi bruge at begge bådende antages at bevæge sig med konstant fart og i en ret linje. Dette har den særlige egenskab at en iagttager på HB også vil se at KB bevæger sig med konstant fart og i en ret linje relativt til iagtagerens perspektiv. Når vi skifter perspektiv siger vi at vi skifter koordinatsystem eller mere formelt intertialsystem. Mens koordinaterne $(x, y)$ angiver positionen på vandet ligesom GPS, så kan vi skifte til koordinatsystemet med koordinaterne $(x',y')$ som angiver position relativt til HB. I dette koordinatsystem vil HB altid være placeret i $(0,0)$ og de andre både beskrives relativt til HB. Det betyder at hvis HB bevæger sig fremad i $(x,y)$-systemet så vil stillestående punkter angives som om at de bevæger bagud i $(x',y')$-systemet. På figur \ref{fig:reference_frame_explainer} ses hvordan koordinaterne til en række bådruter angives i det normale $(x,y)$-system og $(x',y')$-system.
 
-\subsection{Pejlingens betydning for kollisionskurs (matematisk udledning)}\label{sec:pejling_betydning}
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{figures/reference_frame_explainer.pdf}
+  \caption{En illustration af ændringen fra koordinatsystemet $(x,y)$ til HB's intertialsystem med koordinaterne  $(x',y')$ for en række vilkårlige bådruter. Bemærk at pilens retning angiver bådens kurs og vi ser i $(x',y')$-system at bådene ser ud til at sejle en smule sidelæns da en del af bevægelsen skyldes at HB selv flytter sig. Bemærk for eksempel at den lille båd som egentlig står stille i $(x,y)$ nu bevæger sig i  $(x',y')$. Tilsvarende står den lyserøde båd i ro i $(x',y')$ fordi den bevæger sig parallelt (og med samme hastighed) som HB. }
+  \label{fig:reference_frame_explainer}
+\end{figure}
+
+Vi ser altså på figur \ref{fig:reference_frame_explainer} at alle bådende også bevæger sig retlinjet $(x',y')$-systemet. Dermed ved vi at i tilfældet hvor bådene er på kollisionskurs vil en iagttager på HB nødvendigvis se at KB bevæger sig direkte mod iagtageren. Dette er den eneste mulige rette linje hvorpå bådene kan kollidere uden at medparterne ændrer retning eller fart undervejs. Derfor følger det at pejlingen også vil være konstant i tilfældet med kollisionskurs - altså vil en iagtager ikke opleve pejltræk for kollisionsbåden. De eneste andre situationer hvor pejlingen er konstant er når bådene begge ligger stille, sejler parallelt eller sejler væk fra hinanden i modsat retning af kollisionskursen. For disse tre tilfælde nærmer bådene sig ikke i afstand, og det er dermed enkelt at afgøre, at der ikke er kollisionsfare i disse tilfælde. \par
+I det følgende afsnit gives en matematisk udledning for dette koncept, som leder ud i en matematisk sætning. Hvis du ikke er til matematik så burde den overstående forklaring være mere end rigelig til at acceptere dette (se teorem \ref{Teo:pejling}).
+
+
+
+\subsection{Sammenhæng mellem pejltræk og kollisionskurs (matematisk udledning)}\label{sec:pejling_betydning}
 Da vi har antaget at bådene bevæger sig med konstant hastighed, kan vi bruge en lineær transformation til at skifte koordinatsystem til intertialsystemet (dvs. det koordinatsystem som beskriver relativ bevægelse til iagttageren) hvor HB er i ro. Vi kalder dette for HB's intertialsystem. Med andre ord så kan vi frit vælge at beskrive positionen til KB som den opleves for en iagttager ombord på HB. Positionen $\vec{P}'_{KB}$ til KB i det nye intertialsystem kan skrives:
 \begin{align*}
   \vec{P'}_{KB}(t) &= \vec{P}_{KB}(t) - \vec{P}_{HB}(t) \\
@@ -212,8 +241,6 @@ Fra dette ræsonoment har vi altså vist at pejlingen vil være konstant i tilf�
   Hvis og bare hvis to både med konstant hastighed som nærmer sig i afstand har konstant pejling til hinanden er disse på kollisionskurs.
   \label{Teo:pejling}
 \end{theorem}
-\subsection{Gengivelse af konstant-pejling-udledningen uden matematisk notation}
-Siden begge bådene antages at bevæge sig med konstant fart og i en ret linje vil en iagttager på HB også se at KB bevæger sig med konstant fart og i en ret linje. I tilfældet hvor bådene er på kollisionskurs vil en iagttager på HB altså se at KB har kurs direkte mod iagttageren. Dette er den eneste mulige kurs hvorpå bådene kan kollidere uden at medparterne ændrer retning eller fart undervejs. Derfor følger det at pejlingen også vil være konstant i tilfældet med kollisionskurs. De eneste andre situationer hvor pejlingen er konstant er når bådene ligger stille, sejler parallelt eller sejler væk fra hinanden i modsat retning af kollisionskursen. For disse tre tilfælde nærmer bådene sig ikke i afstand, og det er dermed enkelt at afgøre, at der ikke er kollisionsfare.
 
 
 \subsection{Grænsebetingelser for brug af baggrundsmetoden}
