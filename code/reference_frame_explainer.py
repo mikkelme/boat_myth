@@ -14,7 +14,8 @@ matplotlib.rcParams['font.family'] = 'STIXGeneral'
 def plot_arrows(x, y, dir, color):
     """ plot arrows on
         specified positions """
-    scale = 0.6
+    # scale = 0.6
+    scale = 1
     arrow_length = 5*scale
     head_width = 4*scale
     num_arrows = 4
@@ -31,7 +32,7 @@ def plot_arrows(x, y, dir, color):
         dir = np.array([0,1])
     dir_norm = dir/np.linalg.norm(dir)
     dir_arrow = dir_norm*arrow_length
-    for i in range(len(Pos[:,0])):
+    for i in range(len(Pos[:,0])-1):
         plt.arrow(Pos[i,0] - dir_arrow[0]/2, Pos[i,1] - dir_arrow[1]/2, dir_arrow[0], dir_arrow[1], head_width = head_width, head_length = arrow_length, length_includes_head = True, color = color)
 
 def color_cycle(num_color):
@@ -76,7 +77,6 @@ def plot(pos_MB, pos_other):
 
 
     plt.subplot(2, 1, 2)
-    plt.plot(0,0, marker = "o", color = color_cycle(3), label = "HB")
     for i in range(len(pos_other)):
         x = np.array([pos_other[i][0][0], pos_other[i][1][0]]) - np.array(x_MB)
         y = np.array([pos_other[i][0][1], pos_other[i][1][1]]) - np.array(y_MB)
@@ -86,6 +86,7 @@ def plot(pos_MB, pos_other):
         else:
             plot_arrows(x, y, dir_other[i], color_cycle(color[i]))
 
+    plt.plot(0,0, markersize = 8, marker = "o", linestyle = "None", color = color_cycle(3), label = "HB")
 
     plt.xlabel(r"$x'$", fontsize=14)
     plt.ylabel(r"$y'$", fontsize=14)
@@ -116,24 +117,35 @@ def plot(pos_MB, pos_other):
 
 
 if __name__ == "__main__":
-    pos_MB = [[0,10], [10, 30]]
-    pos_other =[    [[10,10], [30, 10]],
-                    [[20,20], [10, 30]],
-                    [[40, 10], [40, 10]],
-                    [[-20,20], [-20, 0]],
-                    [[-10,10], [0, 30]],
-                    [[5,0], [-5, 5]]]
-    plot(pos_MB, pos_other)
-    plt.tight_layout(pad=1.1, w_pad=0.7, h_pad=0.2)
-    plt.savefig("../article/figures/reference_frame_explainer.pdf.pdf", bbox_inches="tight")
-    plt.show()
-
-
-    # pos_MB =        [[0,10], [10, 30]]
-    # pos_other =[    [[20,10], [-5, 25]],
-    #                 [[30,25], [10, 30]],
+    # pos_MB = [[0,10], [10, 30]]
+    # pos_other =[    [[10,10], [30, 10]],
+    #                 [[20,20], [10, 30]],
+    #                 [[40, 10], [40, 10]],
     #                 [[-20,20], [-20, 0]],
     #                 [[-10,10], [0, 30]],
-    #                 [[20,0], [40, 0]],
     #                 [[5,0], [-5, 5]]]
     # plot(pos_MB, pos_other)
+    # plt.tight_layout(pad=1.1, w_pad=0.7, h_pad=0.2)
+    # plt.subplots_adjust(hspace = 0.3)
+    # # plt.savefig("../article/figures/reference_frame_explainer.pdf", bbox_inches="tight")
+    # plt.show()
+
+
+    pos_MB = np.array([[0,10], [10, 30]])
+    a = 35
+    sqrt2 = 1/np.sqrt(2)
+    pos_other =np.array([    [[0,-a], [0, 0]],
+                        [[sqrt2*a,-sqrt2*a], [0, 0]],
+                        [[a,0], [0, 0]],
+                        [[sqrt2*a,sqrt2*a], [0, 0]],
+                        [[0,a], [0, 0]],
+                        [[-sqrt2*a,sqrt2*a], [0, 0]],
+                        [[-sqrt2*a,-sqrt2*a], [0, 0]],
+                        [[-a,0], [0, 0]]])
+
+    pos_other += pos_MB
+    plot(pos_MB, pos_other)
+    plt.tight_layout(pad=1.1, w_pad=0.7, h_pad=0.2)
+    plt.subplots_adjust(hspace = 0.3)
+    plt.savefig("../article/figures/reference_frame_explainer2.pdf", bbox_inches="tight")
+    plt.show()
