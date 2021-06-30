@@ -248,5 +248,5 @@ if __name__ == "__main__":
     ani = animator(MB_start, OB_start, MB_end, OB_end, coast_center, coast_angle, manual_limit, T = 15)
     filename = "../article/figures/aniNC2.gif"
     writer = 'imagemagick'
-    ani.save(filename, writer = writer, dpi = 200, fps=30)
-    #plt.show()
+    # ani.save(filename, writer = writer, dpi = 200, fps=30)
+    plt.show()
