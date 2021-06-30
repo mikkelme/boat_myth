@@ -1,5 +1,5 @@
 # Animationer
-Her findes animationer til støtte af resultaterne i rapporten. Animatioerne viser forskellige situationer med og uden kollision, og hvordan sigtelinjen til baggrunden ændres undervejs. Bemærk at det kan tage lidt tid at loade.
+Her findes animationer til støtte af resultaterne i rapporten. Animationerne viser forskellige situationer med og uden kollision, og hvordan sigtelinjen til baggrunden ændres undervejs. Bemærk at det kan tage lidt tid at loade.
 
 ## Animation 1 (Kollision)
 **Beskrivelse**: Simpel kollision hvor baggrundsmetoden er misvisende. 
